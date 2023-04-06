@@ -1,10 +1,10 @@
 # grow-up-api
 
-Project Name: PlantHugger API
+Project Name: GrowUp API
 
 Description:
 
-PlantHugger API is a simple yet powerful solution for plant owners to never miss watering their plants again. It provides a convenient way to manage plant watering schedules, sends automated reminders, and offers customization options, making it easy for users to keep their plants healthy and thriving.
+GrowUp API is a simple yet powerful solution for plant owners to never miss watering their plants again. It provides a convenient way to manage plant watering schedules, sends automated reminders, and offers customization options, making it easy for users to keep their plants healthy and thriving.
 
 Key Features:
 - Plant management: Users can register their plants with details such as plant name, recommended watering frequency, and last watering date.
@@ -29,4 +29,4 @@ Documentation:
 License:
 [Specify the open-source license under which the API is released, such as MIT or Apache License.]
 
-We appreciate feedback and contributions to make PlantHugger API even better. Feel free to open issues or submit pull requests for enhancements or bug fixes. Happy watering!
+We appreciate feedback and contributions to make GrowUp API even better. Feel free to open issues or submit pull requests for enhancements or bug fixes. Happy watering!
