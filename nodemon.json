@@ -1,5 +1,5 @@
 {
-    "watch": ["src", "routes"],
+    "watch": ["src", "routes", "controllers", "models"],
     "ext": "ts",
     "exec": "npm run build && node dist/src/index.js",
     "ignore": ["node_modules", "dist"],

@@ -1,10 +1,17 @@
 import express from 'express';
+import plantRoutes from './plant-routes.js';
+
 // import AuthMiddleware from "../middlewares/auth"
 
-const indexRouter: express.Application = express();
+const app: express.Application = express();
 
-indexRouter.get('/', (_req, _res) => {
+app.get('/', (_req, _res) => {
     _res.send("TypeScript With Express !");
 });
 
-export default indexRouter;
+app.use('/plant', plantRoutes);
+// app.use('/auth', require('./auth-routes'));
+// app.use('/referential-plant', AuthMiddleware, require('./referential-plant-routes'));
+
+
+export default app;
