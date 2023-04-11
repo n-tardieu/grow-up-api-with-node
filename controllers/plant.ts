@@ -27,8 +27,8 @@ const plantController = {
   },
   postPlant: async (req: Request, res: Response) => {
     try {
-      const { name, wateringFrequency, lastWateringDate } = req.body;
-      const plant = new Plant({ name, wateringFrequency, lastWateringDate });
+      const { name, recommendedWateringFrequency, lastWateringDate } = req.body;
+      const plant = new Plant({ name, recommendedWateringFrequency, lastWateringDate });
       await plant.save();
       res.json({ success: true, data: plant });
     } catch (err) {
@@ -38,10 +38,10 @@ const plantController = {
   updatePlant: async (req: Request, res: Response) => {
     try {
       const plantId = req.params.id;
-      const { name, wateringFrequency, lastWateringDate } = req.body;
+      const { name, recommendedWateringFrequency, lastWateringDate } = req.body;
       const plant = await Plant.findByIdAndUpdate(
         plantId,
-        { name, wateringFrequency, lastWateringDate },
+        { name, recommendedWateringFrequency, lastWateringDate },
         { new: true }
       );
       if (!plant) {

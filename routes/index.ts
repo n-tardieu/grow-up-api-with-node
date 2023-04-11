@@ -4,7 +4,7 @@ import plantRoutes from './plant-routes.js';
 // import AuthMiddleware from "../middlewares/auth"
 
 const app: express.Application = express();
-
+app.use(express.json());
 app.get('/', (_req, _res) => {
     _res.send("TypeScript With Express !");
 });
