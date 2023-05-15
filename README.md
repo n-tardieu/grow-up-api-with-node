@@ -10,7 +10,6 @@ Key Features:
 - Plant management: Users can register their plants with details such as plant name, recommended watering frequency, and last watering date.
 - Watering reminders: Automated reminders are sent to users to notify them when it's time to water their plants based on the registered watering frequency.
 - Customization options: Users can customize watering reminders based on their preferences, such as reminder frequency, time of day, and days of the week.
-- Multi-channel notifications: Support for various notification channels such as push notifications, emails, or SMS, ensuring users receive reminders in a timely and efficient manner.
 - Error handling: Robust error handling to provide clear error messages when registering plants or configuring reminders.
 - Authentication and security: Secure authentication system to protect user data and ensure only authorized users can access the API.
 - Clear documentation: Detailed and user-friendly documentation for developers to easily understand how to use the API and integrate watering reminder functionalities into their applications.
@@ -18,7 +17,7 @@ Key Features:
 - Unit testing: Comprehensive unit tests to ensure the smooth functioning of the API and proactively detect any issues.
 - Monitoring: Implementation of monitoring mechanisms to track performance and availability, with alerting for prompt issue resolution and optimal user experience.
 
-This API is built using [insert technologies and frameworks used], and follows best practices for code quality, security, and maintainability. Contributions are welcome and encouraged from the community.
+This API is built using NodeJS, and follows best practices for code quality, security, and maintainability. Contributions are welcome and encouraged from the community.
 
 Installation and Usage:
 [Include instructions on how to install and use the API, including any dependencies or configuration requirements.]
