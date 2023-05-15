@@ -1,5 +1,6 @@
 import express from 'express';
 import plantRoutes from './plant-routes.js';
+import siteRoutes from './site-routes.js';
 
 // import AuthMiddleware from "../middlewares/auth"
 
@@ -10,6 +11,8 @@ app.get('/', (_req, _res) => {
 });
 
 app.use('/plant', plantRoutes);
+app.use('/site', siteRoutes);
+
 // app.use('/auth', require('./auth-routes'));
 // app.use('/referential-plant', AuthMiddleware, require('./referential-plant-routes'));
 
