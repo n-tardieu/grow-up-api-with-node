@@ -1,6 +1,10 @@
 import express from 'express';
+
+import locationTypeRoutes from './location-type-routes.js';
+import locationRoutes from './location-routes.js';
+import plantVarietyRoutes from './plant-variety-routes.js';
 import plantRoutes from './plant-routes.js';
-import siteRoutes from './site-routes.js';
+import userRoutes from './user-routes.js';
 
 // import AuthMiddleware from "../middlewares/auth"
 
@@ -10,8 +14,11 @@ app.get('/', (_req, _res) => {
     _res.send("TypeScript With Express !");
 });
 
+app.use('/location-types', locationTypeRoutes);
+app.use('/location', locationRoutes);
+app.use('/plant-varieties', plantVarietyRoutes);
 app.use('/plant', plantRoutes);
-app.use('/site', siteRoutes);
+app.use('/users', userRoutes)
 
 // app.use('/auth', require('./auth-routes'));
 // app.use('/referential-plant', AuthMiddleware, require('./referential-plant-routes'));

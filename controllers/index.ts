@@ -1,9 +1,15 @@
+import locationType from './location-type.js';
+import location from './location.js';
+import plantVariety from './plant-variety.js';
 import plant from './plant.js';
-import site from './site.js';
+import user from './user.js';
 
 
 export default {
- plant,
- site
+    locationType,
+    location,
+    plantVariety,
+    plant,
+    user
 };
 
