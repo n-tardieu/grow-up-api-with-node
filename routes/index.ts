@@ -6,6 +6,8 @@ import plantVarietyRoutes from './plant-variety-routes.js';
 import plantRoutes from './plant-routes.js';
 import userRoutes from './user-routes.js';
 
+import authRoutes from './auth-routes.js';
+
 // import AuthMiddleware from "../middlewares/auth"
 
 const app: express.Application = express();
@@ -18,9 +20,10 @@ app.use('/location-types', locationTypeRoutes);
 app.use('/location', locationRoutes);
 app.use('/plant-varieties', plantVarietyRoutes);
 app.use('/plant', plantRoutes);
-app.use('/users', userRoutes)
+app.use('/users', userRoutes);
 
-// app.use('/auth', require('./auth-routes'));
+app.use('/auth', authRoutes);
+
 // app.use('/referential-plant', AuthMiddleware, require('./referential-plant-routes'));
 
 

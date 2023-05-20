@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const eventSchema = new mongoose.Schema({
-    name: String,
-    isInHome: String,
-    light: String,
-    humidity: String,
-    temperature: String
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+    },
 })
 
 eventSchema.set('toJSON', {

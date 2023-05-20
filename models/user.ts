@@ -1,27 +1,32 @@
 import mongoose from 'mongoose';
+// import { RolesEnum } from '../constants/enums/role.enum.js'
 
 const eventSchema = new mongoose.Schema({
-    firstname: {
-        type: String, required: [true, "can't be blank"],
-    },
-    lastname: {
-        type: String, required: [true, "can't be blank"],
+    name: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
-        lowercase: true,
+        required: true,
         unique: true,
-        required: [true, "can't be blank"],
-        index: true,
+    },
+    password: {
+        type: String,
+        required: true,
     },
     role: {
         type: String,
-        required: [true, "can't be blank"],
+        enum: ['admin', 'user'],
+        // TODO: TEST enum 
+        //   enum: Object.values(RolesEnum)
+        default: 'user',
     },
-    password: {
-        type: String, required: [true, "can't be blank"],
-    },
-}, { timestamps: true });
+    plants: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Plant',
+    }],
+});
 
 
 eventSchema.set('toJSON', {

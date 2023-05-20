@@ -1,12 +1,37 @@
 import mongoose from 'mongoose';
 
 const eventSchema = new mongoose.Schema({
-    name: String,
-    isInHome: String,
-    light: String,
-    humidity: String,
-    temperature: String
-})
+    name: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    type: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'LocationType',
+        required: true,
+    },
+    temperature: {
+        type: Number,
+        required: true,
+    },
+    humidity: {
+        type: Number,
+        required: true,
+    },
+    lightExposure: {
+        type: String,
+        required: true,
+    },
+    ventilation: {
+        type: String,
+        required: true,
+    },
+});
 
 eventSchema.set('toJSON', {
     transform: (doc, returnedObject) => {

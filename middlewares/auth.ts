@@ -1,11 +1,8 @@
-const jwt = require('jsonwebtoken');
-const secret = process.env.SECRET
+import jwt from 'jsonwebtoken';
 
-module.exports = async function(req, res, next) {
-  return jwtAuth(req, res, next);
-}
+const secret = process.env.SECRET || 'your-secret-key';
 
-async function jwtAuth(req, res, next) {
+const jwtAuth = async (req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(403).json({ error: 'No credentials provided' });
   }
@@ -19,4 +16,8 @@ async function jwtAuth(req, res, next) {
     return res.status(403).json({ error: 'Invalid token' });
   }
   next();
+};
+
+export default async function jwtAuthMiddleware(req, res, next) {
+  return jwtAuth(req, res, next);
 }

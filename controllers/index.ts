@@ -3,6 +3,7 @@ import location from './location.js';
 import plantVariety from './plant-variety.js';
 import plant from './plant.js';
 import user from './user.js';
+import auth from './auth.js';
 
 
 export default {
@@ -10,6 +11,7 @@ export default {
     location,
     plantVariety,
     plant,
-    user
+    user,
+    auth
 };
 
