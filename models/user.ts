@@ -21,11 +21,7 @@ const eventSchema = new mongoose.Schema({
         // TODO: TEST enum 
         //   enum: Object.values(RolesEnum)
         default: 'user',
-    },
-    plants: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Plant',
-    }],
+    }
 });
 
 
