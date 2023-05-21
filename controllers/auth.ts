@@ -2,7 +2,7 @@ import User from '../models/user.js';
 import bcrypt from 'bcrypt-nodejs';
 import jwt from 'jsonwebtoken';
 
-const secret = 'your-secret-key';
+const secret = process.env.SECRET || 'your-secret-key';
 
 const AuthController = {
   test(req, res) {
