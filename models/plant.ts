@@ -5,7 +5,11 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    plantVariety: {
+    description: {
+        type: String,
+        required: true,
+    },
+    variety: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'PlantVariety',
         required: true,
