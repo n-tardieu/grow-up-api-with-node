@@ -30,6 +30,34 @@ const eventSchema = new mongoose.Schema({
     },
 });
 
+// Utilisation de populate pour récupérer les objets complets lors de la requête
+eventSchema.pre('find', function (next) {
+    this.populate('variety')
+        .populate({
+            path: 'location',
+            select: '-user'
+        })
+        .populate({
+            path: 'user',
+            select: '-password',
+        });
+    next();
+});
+
+// Utilisation de populate pour récupérer l'objet complet lors de la requête findOne
+eventSchema.pre('findOne', function (next) {
+    this.populate('variety')
+        .populate({
+            path: 'location',
+            select: '-user'
+        })
+        .populate({
+            path: 'user',
+            select: '-password',
+        });
+    next();
+});
+
 eventSchema.set('toJSON', {
     transform: (doc, returnedObject) => {
         returnedObject.id = returnedObject._id.toString();

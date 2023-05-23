@@ -38,6 +38,24 @@ const eventSchema = new mongoose.Schema({
     },
 });
 
+eventSchema.pre('find', function (next) {
+    this.populate('type')
+        .populate({
+            path: 'user',
+            select: '-password -id',
+        });
+    next();
+});
+
+eventSchema.pre('findOne', function (next) {
+    this.populate('type')
+        .populate({
+            path: 'user',
+            select: '-password -id',
+        });
+    next();
+});
+
 eventSchema.set('toJSON', {
     transform: (doc, returnedObject) => {
         returnedObject.id = returnedObject._id.toString();
