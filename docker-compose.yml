@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   mongodb:
@@ -7,6 +7,26 @@ services:
       - "27017:27017"
     volumes:
       - ./data/db:/data/db
+    networks:
+      - my-network
+
+  sonarqube:
+    image: sonarqube
+    ports:
+      - "9000:9000"
+    networks:
+      - my-network
+
+  sonar-scanner:
+    image: sonarsource/sonar-scanner-cli
+    environment:
+      - SONAR_HOST_URL=http://sonarqube:9000
+      - SONAR_SCANNER_OPTS=-Dsonar.projectKey=grow-up -Dsonar.sources=. -Dsonar.host.url=http://sonarqube:9000 -Dsonar.token=sqp_2c2641a55f4c3344fcf27f909668e4268ab0cfb9
+
+    volumes:
+      - ../grow-up-api:/usr/src
+    depends_on:
+      - sonarqube
     networks:
       - my-network
 

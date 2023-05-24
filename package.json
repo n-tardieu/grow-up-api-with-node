@@ -8,6 +8,7 @@
         "start": "nodemon",
         "build": "tsc",
         "test": "vitest",
+        "docker": "docker-compose up",
         "seed": "node seeds/seed.js"
     },
     "keywords": [],
