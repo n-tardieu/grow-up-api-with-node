@@ -14,10 +14,10 @@ const options: any = {
 };
 
 mongoose.connect(mongoUri, options)
-.then(() => {
-  console.log('Connected to database');
-})
-.catch((err) => console.log('Error connecting database', err.message));
+  .then(() => {
+    console.log('Connected to database');
+  })
+  .catch((err) => console.log('Error connecting database', err.message));
 
 
 const app: express.Application = express();
@@ -28,6 +28,8 @@ app.use('/', indexRouter);
 const port: number = 3000;
 
 app.listen(port, () => {
-    console.log(`TypeScript with Express !
+  console.log(`TypeScript with Express !
 		http://localhost:${port}/`);
 });
+
+export default app
