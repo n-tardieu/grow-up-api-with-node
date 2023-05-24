@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import seedLocationTypes from './data/location-types.seed.js';
 import seedLocations from './data/location.seed.js';
 import seedPlantVarieties from './data/plant-varieties.seed.js';
-import seedPlant from './data/plant.seed.js';
 import seedUsers from './data/users.seed.js';
 
 import LocationType from './models/location-type.model.js';
